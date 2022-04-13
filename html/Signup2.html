@@ -9,9 +9,11 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <style ></style>
 </head>
 
 <body>
+  
 
 
   <!-- nav bar -->
@@ -61,50 +63,53 @@
   </nav>
       <!-- nav bar ends -->
 
-      <div id="loginForm">
-        <center>
-          <form action="./login.html" class="login">
-              <h2>User Login</h2>
-              <br>
-              <div class="name">
-                  <label>Name</label><br>
-                  <input type="text" placeholder="name" id="name"><br>
-                  <p id="nameError"></p>
-                  <br>
-              </div>
-              <div class="number">
-                  <label>Phone Number</label><br>
-                  <input type="number" placeholder="Phone Number" id="number"><br>
-                  <p id="numError"></p>
-                  <br>
-              </div>
-              <div class="email">
-                  <label>Email</label><br>
-                  <input type="text" placeholder="Email" id="email"><br>
-                  <p id="mailError"></p>
-                  <br>
-              </div>
-              <div class="password">
-                  <label>Password</label><br>
-                  <input type="password" placeholder="password" id="password"><br>
-                  <p id="passwordError"></p>
-                  <br>
-              </div>
-              <div class="password">
-                  <label>Re Enter Password</label><br>
-                  <input type="password" placeholder="re enterPassword"><br>
-                  <br>
-              </div>
-              
-              <div class="login-content">
-                  <input id="login-button" type="submit" value="Create new Account"><br>
-                  <br>
-              </div>
-             
-          </form>
-      </center>
+      <!-- Main div code -->
+  <div id="main">
+    <center>
+    <div class="h-tag">
+      <br>
+    <h2>Register Your Account</h2>
     </div>
+    <!-- create account div -->
+    <form action="#">
+    <div class="login">
+    <table cellspacing="2" align="center" cellpadding="10" border="0">
+    <tr>
+    <td align="right">Enter Name :</td>
+    <td><input type="text" placeholder="Enter user here" id="t1" class="tb" /></td>
+    </tr>
+    <tr>
+    <td align="right">Enter Email ID :</td>
+    <td><input type="text" placeholder="Enter Email ID here" id="t2" class="tb" /></td>
+    </tr>
+    <tr>
+    <td align="right">Enter Phone Number :</td>
+    <td><input type="number" placeholder="Enter Phone Number here" id="t3" class="tb" /></td>
+    </tr>
+    <tr>
+    <td align="right">Enter Password :</td>
+    <td><input type="password" placeholder="Enter Password here" id="t4" class="tb" /></td>
+    </tr>
+    
+    <tr>
+    <td align="right">Enter Confirm Password :</td>
+    <br>
+    <td><input type="password" placeholder="Enter Password here" id="t5" class="tb" /></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td>
+    
+    <input type="submit" value="Create Account" class="btn" onclick="registration()" /></td>
+    </tr>
+    </table>
+  </form>
+    </div>
+    <!-- create account box ending here.. -->
+    </div>
+  </center>
+    <!-- Main div ending here... -->
+    </body>
     <script src="../JS/script.js"></script>
-
 </body>
 </html>

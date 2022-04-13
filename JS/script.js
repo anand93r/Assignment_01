@@ -1,91 +1,70 @@
-const form = document.getElementsByTagName('form')[1];
-function validate() {
-    var email = document.getElementById("email");
-    var regexp = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9]+)\.([a-z]{2,8})(.[a-z]{2,8})?$/;
-    if (email.value.trim() === "") {
-        alert("Empty email");
-        return false;
+function registration()
+{
+
+    var name= document.getElementById("t1").value;
+    var email= document.getElementById("t2").value;
+    var number= document.getElementById("t3").value;
+    var pwd= document.getElementById("t4").value;           
+    var cpwd= document.getElementById("t5").value;
+    
+    //email id expression code
+    var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+    var letters = /^[A-Za-z]+$/;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var number1 = /^[0-9\s\w]{10,13}$/;
+
+    if(name=='')
+    {
+        alert('Please enter your name');
     }
-    else if (!regexp.test(email.value)) {
-        alert("Invalid Email");
-        return false;
+    else if(!letters.test(name))
+    {
+        alert('Name field required only alphabet characters');
     }
-    else {
-        return true;
+    else if(email=='')
+    {
+        alert('Please enter your user email id');
+    }
+    else if (!filter.test(email))
+    {
+        alert('Invalid email');
+    }
+    else if(number=='')
+    {
+        alert('Please enter the phonenumber.');
+    }
+    else if(!number1.test(number))
+    {
+        alert('Phone number field required only numbers');
+    }
+    else if(pwd=='')
+    {
+        alert('Please enter Password');
+    }
+    else if(cpwd=='')
+    {
+        alert('Enter Confirm Password');
+    }
+    else if(!pwd_expression.test(pwd))
+    {
+        alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+    }
+    else if(pwd != cpwd)
+    {
+        alert ('Password not Matched');
+    }
+    else if(document.getElementById("t5").value.length < 6)
+    {
+        alert ('Password minimum length is 6');
+    }
+    else if(document.getElementById("t5").value.length > 12)
+    {
+        alert ('Password max length is 12');
+    }
+    else
+    {                                           
+           alert('Thank You for Registration & You are Redirecting to Website');
+           // Redirecting to other page or webste code. 
+            
     }
 }
-const form2 =document.getElementsByClassName("name");
-function validate2() {
-    var name = document.getElementById("name");
-    var regexp2 = /^([a-zA-Z\.]+)$/;
-    if (name.value.trim() === "") {
-        alert("Empty name");
-        return false;
-    }
-    else if (!regexp2.test(name.value)) {
-        alert("Invalid name");
-        return false;
-    }
-    else {
-        return true;
-    }
-}
-
-//for phone number
-const form3 =document.getElementsByClassName("number");
-function validate3() {
-    var number = document.getElementById("number");
-    var regexp3 = /^([0-9\-]{10,13})$/;
-    if (number.value.trim() === "") {
-        alert("Empty number");
-        return false;
-    }
-    else if (!regexp3.test(number.value)) {
-        alert("Invalid number");
-        return false;
-    }
-    else {
-        return true;
-    }
-}
-
-// phone number ends
-// for password
-// for password
-
-const form4 = document.getElementsByClassName('password');
-function validate4() {
-    var password = document.getElementById("password");
-    var regexp4 = /^([a-zA-Z0-9\.-?]+)$/;
-    if (email.value.trim() === "") {
-        alert("Empty password");
-        return false;
-    }
-    else if (!regexp4.test(password.value)) {
-        alert("Invalid Password");
-        return false;
-    }
-    else {
-        return true;
-    }
-}
-
-form.addEventListener('submit', function (event) {
-    // if the email field is valid, we let the form submit
-    if (!validate()) {
-        // Then we prevent the form from being sent by canceling the event
-        event.preventDefault();
-    }
-    else if(!validate2()){
-        event.preventDefault();
-    }
-    else if(!validate3()){
-        event.preventDefault();
-    }
-    else if (!validate4()){
-        event.preventDefault();
-    }
-});
-
-
-
