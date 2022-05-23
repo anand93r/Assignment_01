@@ -1,27 +1,29 @@
 const express = require('express'); 
 const path = require ('path'); 
-const cors = require('cors');
+//7th removed cors
+//const cors = require('cors');
 //bodyparser not imported
 const bodyParser = require('body-parser');
 
-const nav= [
-    {
-        link:"/books",
-        title:"Books"
-    },
-    {
-        link:"/authors",
-        title:"Authors"
-    },
-    {
-        link:"/addbook",
-        title:"Add Book"
-    },
-    {
-        link:"/addauthor",
-        title:"Add Author"
-    }
-]
+//6 th
+//  const nav= [
+//     {
+//         link:"/books",
+//         title:"Books"
+//     },
+//     {
+//         link:"/authors",
+//         title:"Authors"
+//     },
+//     {
+//         link:"/addbook",
+//         title:"Add Book"
+//     },
+//     {
+//         link:"/addauthor",
+//         title:"Add Author"
+//     }
+// ]
 
 const loginRouter = require('./src/routes/loginroute');
 const signupRouter = require('./src/routes/signuproute');
