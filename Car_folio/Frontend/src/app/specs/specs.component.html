@@ -1,0 +1,38 @@
+<div class="card-header">
+    {{title}}
+</div>
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <button class="btn btn-primary">Show Images</button>
+                    </th>
+                    <th>Number</th>
+                    <th>Car</th>
+                    <th>Model</th>
+                    <th>Kilometre</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data from the database should display here -->
+                <tr *ngFor='let i of products'>
+                    <td><img [src]="i.imageURL" alt="image" [style.width.px]='imageWidth'
+                            [style.margin.px]='imageMargin'>
+                    </td>
+                    <td>{{i.number}}</td>
+                    <td>{{i.carName}}</td>
+                    <td>{{i.model}}</td>
+                    <td>{{i.km}}</td>
+                    <td>{{i.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
